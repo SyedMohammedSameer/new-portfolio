@@ -46,7 +46,7 @@ export default function Contact() {
 
     // Send data to Formspree if validation passes
     setIsSubmitting(true);
-    const response = await fetch("https://formspree.io/f/mpwpaekz", {
+    const response = await fetch("https://formspree.io/f/myzezpdo", {
       method: "POST",
       headers: {
         Accept: "application/json",
