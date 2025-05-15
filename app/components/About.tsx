@@ -10,26 +10,22 @@ export default function About() {
     {
       icon: <Code className="w-8 h-8 text-blue-500" />,
       title: "Machine Learning Engineer",
-      description:
-        "I develop scalable ML and Deep Learning models, focusing on automation and impactful AI solutions.",
+      description: "I build scalable ML/DL models for automation and real-world impact.",
     },
     {
       icon: <Server className="w-8 h-8 text-green-500" />,
-      title: "Artificial Intelligence Engineer",
-      description:
-        "I transform data into insights, visualizations, and analytics for decision-making, leveraging NLP, computer vision, and predictive modeling to drive efficiency and growth.",
+      title: "AI Engineer",
+      description: "I apply NLP, OpenCV, and predictive models to turn data into smart decisions.",
     },
     {
       icon: <Database className="w-8 h-8 text-purple-500" />,
       title: "Software Engineer",
-      description:
-        "I specialize in Python backend development and AI integration, building Multi-Agent frameworks and scalable solutions to solve business problems efficiently.",
+      description: "I develop Python frontend and AI-integrated backends, multi-agent systems.",
     },
     {
       icon: <Zap className="w-8 h-8 text-yellow-500" />,
       title: "Gen AI Engineer",
-      description:
-        "Proficient in Generative AI tools like OpenAI, Anthropic, Groq, Llama, and Hugging Face. Experienced in fine-tuning models, Multi-Agent Systems, and generative techniques for diverse applications.",
+      description: "Skilled in OpenAI, LLaMA, Hugging Face—fine-tuning, agents, and gen AI apps.",
     },
   ];
 
