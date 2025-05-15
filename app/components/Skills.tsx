@@ -59,7 +59,7 @@ const skills = [
   {
     icon: Terminal,
     name: "Deep Learning Algorithms",
-    tech: "CNNs, RNNs, GANs, ResNet",
+    tech: "CNNs, RNNs, GANs, GNNs, ResNet, VAEs, Vision Transformers",
     description: `
       Hands-on experience with advanced DL architectures, including:
       CNNs for image processing

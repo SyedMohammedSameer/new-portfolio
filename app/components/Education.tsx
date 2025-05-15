@@ -18,7 +18,8 @@ export default function Education() {
         "Loan Default Prediction for a German Bank",
         "Movie Recommendation System",
         "PharmaAgent (Al-driven pharmaceutical assistant)",
-        "StyleGAN-based Al Image Identifier",
+        "GAN, Vision Transformer based Al Image Identifier",
+        "Research on IceCube Neutrino Observatory",
       ],
     },
     {

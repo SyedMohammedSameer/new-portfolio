@@ -7,11 +7,29 @@ import { ExternalLink } from "lucide-react"; // Import Lucide icon
 import Rocket from "@/public/rocket.png";
 import Germanbank from "@/public/germanbank.png";
 import Solarwather from "@/public/solarweather.png";
+import JarvisAI from "@/public/JarvisAI.png";
+import ImageDetectorAI from "@/public/ImageDetectorAI.png"
+import AutoPharma from "@/public/AutoPharma.png"
 
 export default function KeyProjects() {
   const projects = [
     {
-      title: "Deep Learning",
+      title: "AutoPharma",
+      image: AutoPharma,
+      link: "https://github.com/SyedMohammedSameer/AutoPharma",
+    },
+    {
+      title: "Image Dectection",
+      image: ImageDetectorAI,
+      link: "https://github.com/SyedMohammedSameer/ImageDetectorAI",
+    },
+    {
+      title: "Jarvis AI",
+      image: JarvisAI,
+      link: "https://github.com/SyedMohammedSameer/JARVIS",
+    },
+    {
+      title: "Solar Weather Forecast",
       image: Solarwather,
       link: "https://github.com/SyedMohammedSameer/SpaceWeatherForecast",
     },

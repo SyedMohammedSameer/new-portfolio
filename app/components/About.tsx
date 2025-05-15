@@ -1,3 +1,4 @@
+/// <reference types="react" />
 "use client";
 
 import { motion } from "framer-motion";
@@ -57,20 +58,27 @@ export default function About() {
           >
             <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
               A passionate Software Engineer and Machine Learning enthusiast,
-              currently pursuing a Master’s in Machine Learning at the
-              University of Arizona. At Lumenci, I lead AI-driven solutions
-              within a backend team, utilizing FastAPI, AutoGPT, and custom AI
-              agents, while deploying Random Forest models for our AI Workbench.
-              Skilled in Python, Data Structures, ML/DL frameworks, and Ethical
-              Hacking (Linux), I’ve worked on projects in CNN-based Image
-              Recognition, GANs, GNNs, NLP, and LLM fine-tuning with QLORA and
-              SFT.
+              currently pursuing a Master's in Machine Learning at the
+              University of Arizona. As a Research Assistant, I work on
+              Generative AI in semiconductor design and digital phenotyping for
+              female health, applying LLMs and robust AI/ML algorithms. I
+              specialize in pretraining, supervised fine-tuning with QLoRA and
+              SFT, multi-agent coordination, MCP (Memory Context Planning), and
+              scalable AI pipelines.
             </p>
             <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              Outside of tech, I build a high-speed model rocket with a custom
-              flight computer, combining electronics and aerospace. A stargazer
-              and sports fan, I’m open to AI/ML, software engineering, and
-              interdisciplinary collaborations. Let’s connect! 🚀
+              At Lumenci, I led backend AI-driven solutions using FastAPI,
+              AutoGPT, and custom AI agents. I also deployed Random Forest
+              models as part of an AI Workbench platform. Skilled in Python,
+              data structures, ML/DL frameworks, and ethical hacking on Linux,
+              I've contributed to projects involving CNN-based image
+              recognition, GANs, GNNs, NLP, and LLM customization.
+            </p>
+            <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+              Beyond tech, I built a high-speed model rocket with a custom
+              flight computer, merging electronics and aerospace. A stargazer
+              and sports fan, I'm open to AI/ML, software engineering, and
+              interdisciplinary collaborations. Let's connect! 🚀
             </p>
           </motion.div>
           <motion.div

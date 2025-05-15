@@ -69,11 +69,11 @@ export default function Hero() {
               AI Engineer
             </h2>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Currently a Master’s student in Machine Learning at the University
-              of Arizona, working as a Research Assistant. My research involves
-              supervised fine-tuning of LLMs using advanced retry
-              logic.Previously, I was a Software Engineer at Lumenci, developing
-              cutting-edge AI solutions.
+              A passionate Machine Learning enthusiast and Software Engineer,
+              currently pursuing a Master's at the University of Arizona. I
+              research Generative AI for semiconductors and digital phenotyping
+              for female health, with expertise in fine-tuning and pretraining LLMs, multi-agent
+              systems, and scalable deep learning pipelines.
             </p>
             <div className="flex justify-center lg:justify-start space-x-4 mb-8">
               <a

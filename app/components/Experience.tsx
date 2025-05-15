@@ -13,6 +13,8 @@ export default function Experience() {
       period: "March 2025",
       role: "Graduate Research Assistant",
       responsibilities: [
+        "Collaborating with one of the globe’s leading semiconductor companies to harness state-of-the-art Generative AI techniques—including Retrieval-Augmented Generation (RAG), Pydantic-based Multi-Agent systems, open-source LLMs, fine-tuning and pretraining models, as well as AI-driven simulations and 3D model rendering—for cutting-edge industrial applications.",
+        "Conducting research on digital phenotyping for female health by leveraging Big Data analytics and applying Machine Learning and Deep Learning models to uncover patterns, improve diagnostics, and enable personalized interventions.",
       ],
     },
     {
