@@ -9,7 +9,7 @@ import Germanbank from "@/public/germanbank.png";
 import Solarwather from "@/public/solarweather.png";
 import JarvisAI from "@/public/JarvisAI.png";
 import ImageDetectorAI from "@/public/ImageDetectorAI.png"
-import AutoPharma from "@/public/AutoPharma.png"
+import AutoPharma from "@/public/AutopharmaAI.png"
 import mediai from "@/public/MediAI.png"
 import protein from "@/public/PPIGNN.png"
 import afny from "@/public/AfnyAI.png"
