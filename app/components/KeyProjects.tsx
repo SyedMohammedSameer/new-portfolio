@@ -10,9 +10,27 @@ import Solarwather from "@/public/solarweather.png";
 import JarvisAI from "@/public/JarvisAI.png";
 import ImageDetectorAI from "@/public/ImageDetectorAI.png"
 import AutoPharma from "@/public/AutoPharma.png"
+import mediai from "@/public/MediAI.png"
+import protein from "@/public/PPIGNN.png"
+import afny from "@/public/AfnyAI.png"
 
 export default function KeyProjects() {
   const projects = [
+    {
+      title: "MediAI",
+      image: mediai,
+      link: "https://medi-ai-eta.vercel.app/",
+    },
+    {
+      title: "Protein Protein Interaction GNN",
+      image: protein,
+      link: "https://github.com/SyedMohammedSameer/ProteinProteinInteractionGNN",
+    },
+    {
+      title: "Afny AI",
+      image: afny,
+      link: "https://afny-ai-v2.vercel.app/",
+    },
     {
       title: "AutoPharma",
       image: AutoPharma,
