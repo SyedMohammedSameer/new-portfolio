@@ -13,7 +13,7 @@ import AutoPharma from "@/public/AutopharmaAI.png"
 import mediai from "@/public/MediAI.png"
 import protein from "@/public/PPIGNN.png"
 import afny from "@/public/AfnyAI.png"
-import ionthefold from "@/public"
+import ionthefold from "@/public/ionthefold.png"
 import biosphereai from "@/public/biosphere.png"
 import salsabil from "@/public/salsabil.png"
 
