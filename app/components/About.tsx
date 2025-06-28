@@ -59,7 +59,7 @@ export default function About() {
               Generative AI in semiconductor design and digital phenotyping for
               female health, applying LLMs and robust AI/ML algorithms. I
               specialize in pretraining, supervised fine-tuning with QLoRA and
-              SFT, multi-agent coordination, MCP (Memory Context Planning), and
+              SFT, multi-agent coordination, MCP (Model Context Protocol), and
               scalable AI pipelines.
             </p>
             <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">

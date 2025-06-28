@@ -13,9 +13,27 @@ import AutoPharma from "@/public/AutopharmaAI.png"
 import mediai from "@/public/MediAI.png"
 import protein from "@/public/PPIGNN.png"
 import afny from "@/public/AfnyAI.png"
+import ionthefold from "@/public"
+import biosphereai from "@/public/biosphere.png"
+import salsabil from "@/public/salsabil.png"
 
 export default function KeyProjects() {
   const projects = [
+    {
+      title: "IonTheFold",
+      image: ionthefold,
+      link: "https://mohammedsameersyed.vercel.app/",
+    },
+    {
+      title: "BioSphereAI",
+      image: biosphereai,
+      link: "https://devpost.com/software/biosphereai",
+    },
+    {
+      title: "Salsabil",
+      image: salsabil,
+      link: "https://salsabil-syedmohammedsameers-projects.vercel.app/",
+    },
     {
       title: "MediAI",
       image: mediai,

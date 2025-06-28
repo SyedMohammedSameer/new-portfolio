@@ -41,7 +41,7 @@ const skills = [
   {
     icon: Database,
     name: "Database Management",
-    tech: "SQL, MongoDB, Mongoose",
+    tech: "SQL, MongoDB, Firebase, Supabase, Nano",
     description:
       "Experienced in working with both SQL and NoSQL databases, including MongoDB, ensuring efficient data storage, retrieval, and management for large-scale applications.",
     color: "text-purple-500",
