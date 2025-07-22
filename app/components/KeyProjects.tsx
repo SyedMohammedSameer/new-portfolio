@@ -22,7 +22,7 @@ export default function KeyProjects() {
     {
       title: "IonTheFold",
       image: ionthefold,
-      link: "https://mohammedsameersyed.vercel.app/",
+      link: "https://www.ionthefold.com/",
     },
     {
       title: "BioSphereAI",

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { GitlabIcon as GitHub, Linkedin, Mail, ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 import Picture from "@/public/profile.jpeg";
 
 const CodePattern = () => (
@@ -38,7 +39,15 @@ const CodePattern = () => (
   </svg>
 );
 
-export default function Hero() {
+interface HeroProps {
+  aboutRef: React.RefObject<{ show: () => void }>;
+}
+
+export default function Hero({ aboutRef }: HeroProps) {
+  const handleLearnMore = () => {
+    aboutRef.current?.show();
+  };
+
   return (
     <section
       id="hero"
@@ -99,11 +108,7 @@ export default function Hero() {
               </a>
             </div>
             <motion.button
-              onClick={() =>
-                document
-                  .getElementById("about")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={handleLearnMore}
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -125,7 +130,7 @@ export default function Hero() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[422px]">
                 <Image
                   src={Picture}
-                  alt="Usman Zafar"
+                  alt="Mohammed Sameer Syed"
                   fill
                   className="object-cover h-[100px]"
                   priority

@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef } from "react";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Experience from "./components/Experience";
@@ -9,11 +12,13 @@ import FloatingNav from "./components/floating-nav";
 import KeyProjects from "./components/KeyProjects";
 
 export default function Home() {
+  const aboutRef = useRef<{ show: () => void }>(null);
+
   return (
     <main className="bg-gray-50 dark:bg-gray-900 min-h-screen">
       <FloatingNav />
-      <Hero />
-      <About />
+      <Hero aboutRef={aboutRef} />
+      <About ref={aboutRef} />
       <Experience />
       <KeyProjects />
       <Skills />
