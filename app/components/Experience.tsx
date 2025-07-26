@@ -8,6 +8,17 @@ import AnimatedSectionHeader from "./AnimatedSectionHeader";
 export default function Experience() {
   const experiences = [
     {
+      company: "Quelea",
+      location: "Singapore",
+      period: "June 2025",
+      role: "Co-Founder/ Lead AI Engineer",
+      responsibilities: [
+        "Developed a multi-agent video analysis platform with real-time audio, visual, sentiment, and multimodal intelligence; integrated agents for ASMR detection, beauty scoring, pose analysis, OCR, and virality prediction.",
+        "Built a custom model inspired by NexTGPT, trained on 5,058 influencer videos to achieve state-of-the-art results in multimodal understanding; currently preparing the research for arXiv publication.",
+        "Finetuned and deployed Qwen 2.5 Vision Instruct model using QLoRA and 7k curated datapoints via Runpod, boosting overlay text extraction accuracy in diverse video conditions.",
+      ],
+    },
+    {
       company: "University of Arizona",
       location: "Tucson, AZ, USA",
       period: "March 2025",
