@@ -8,6 +8,18 @@ import AnimatedSectionHeader from "./AnimatedSectionHeader";
 export default function Experience() {
   const experiences = [
     {
+      company: "IonTheFold",
+      location: "Singapore",
+      period: "June 2025",
+      role: "Co-Founder / AI Engineering Lead",
+      responsibilities: [
+        "Co-founded a research-focused startup reimagining protein and antibody design with AI, unlocking breakthroughs for drug discovery and biotechnology.",
+        "Led development of deep learning pipelines with the Grinter Lab (University of Melbourne) and Knott Lab (Monash University), leveraging NGS-derived sequence datasets for training and validation.",
+        "Designed a fusion architecture combining ESM-2, APBS, and ProteinMPNN with a novel electrostatic-aware loss function, achieving 6.53% improvement on charged proteins and a 4.14% ± 0.026 overall gain in sequence recovery, surpassing state-of-the-art methods across diverse protein families.",
+        "Applied computational frameworks to affinity optimization, developability prediction, and antibody humanization strategies, supporting engineering workflows such as CDR optimization, aggregation risk reduction, and stability assessment."
+      ]
+    },
+    {
       company: "Quelea",
       location: "Singapore",
       period: "June 2025",
