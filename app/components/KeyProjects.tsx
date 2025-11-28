@@ -16,9 +16,27 @@ import afny from "@/public/AfnyAI.png"
 import ionthefold from "@/public/ionthefold.png"
 import biosphereai from "@/public/biosphere.png"
 import salsabil from "@/public/salsabil.png"
+import shifamind from "@/public/shifamind.png"
+import cometsee from "@/public/cometsee.png"
+import jobhuntai from "@/public/jobhuntai.png"
 
 export default function KeyProjects() {
   const projects = [
+    {
+      title: "ShifaMind",
+      image: shifamind,
+      link: "https://github.com/SyedMohammedSameer/ShifaMind_Capstone",
+    },
+    {
+      title: "COMET-SEE",
+      image: cometsee,
+      link: "https://huggingface.co/spaces/MohammedSameerSyed/soho-comet-detector",
+    },
+    {
+      title: "JobHuntAI",
+      image: jobhuntai,
+      link: "https://github.com/SyedMohammedSameer/JobHuntAI",
+    },
     {
       title: "IonTheFold",
       image: ionthefold,
