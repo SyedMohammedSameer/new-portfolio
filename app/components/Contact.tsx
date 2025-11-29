@@ -72,9 +72,26 @@ export default function Contact() {
       id="contact"
       className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-900 transition-colors duration-300 overflow-hidden relative"
     >
-      <div className="container mx-auto px-6 relative z-10">
+      {/* Animated grid background */}
+      <div className="absolute inset-0 grid-pattern opacity-30"></div>
+
+      {/* Floating gradient orbs */}
+      <motion.div
+        className="absolute top-20 right-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
+        animate={{
+          x: [0, -50, 0],
+          y: [0, 50, 0],
+        }}
+        transition={{
+          duration: 16,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.h2
-          className="text-4xl font-bold mb-12 text-center dark:text-white"
+          className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -82,7 +99,7 @@ export default function Contact() {
         >
           Get in Touch
         </motion.h2>
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-12">
           <motion.div
             className="lg:w-1/3"
             initial={{ opacity: 0, x: -50 }}
@@ -90,28 +107,47 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-semibold mb-6 dark:text-white">
-                Contact Information
-              </h3>
-              <div className="space-y-6">
-                <a
-                  href="mailto:musmanzafar53@gmail.com"
-                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-                >
-                  <Mail className="w-6 h-6 mr-3 text-blue-600" />
-                  mohammedsameersyed1@gmail.com
-                </a>
-                <a
-                  href="tel:+923055356766"
-                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-                >
-                  <Phone className="w-6 h-6 mr-3 text-blue-600" />
-                  +1 (520)250-6750
-                </a>
-                <div className="flex items-center text-gray-600 dark:text-gray-300">
-                  <MapPin className="w-6 h-6 mr-3 text-blue-600" />
-                  Arizona, USA
+            <div className="glass-card p-8 rounded-2xl relative overflow-hidden group">
+              {/* Animated gradient blob */}
+              <motion.div
+                className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-full blur-2xl"
+                animate={{
+                  scale: [1, 1.4, 1],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                  Contact Information
+                </h3>
+                <div className="space-y-6">
+                  <motion.a
+                    href="mailto:musmanzafar53@gmail.com"
+                    className="flex items-center glass px-4 py-3 rounded-xl hover:glow-blue transition-all duration-300"
+                    whileHover={{ x: 5, scale: 1.02 }}
+                  >
+                    <Mail className="w-6 h-6 mr-3 text-blue-600" />
+                    <span className="text-gray-700 dark:text-gray-300">mohammedsameersyed1@gmail.com</span>
+                  </motion.a>
+                  <motion.a
+                    href="tel:+923055356766"
+                    className="flex items-center glass px-4 py-3 rounded-xl hover:glow-blue transition-all duration-300"
+                    whileHover={{ x: 5, scale: 1.02 }}
+                  >
+                    <Phone className="w-6 h-6 mr-3 text-blue-600" />
+                    <span className="text-gray-700 dark:text-gray-300">+1 (520)250-6750</span>
+                  </motion.a>
+                  <motion.div
+                    className="flex items-center glass px-4 py-3 rounded-xl"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <MapPin className="w-6 h-6 mr-3 text-blue-600" />
+                    <span className="text-gray-700 dark:text-gray-300">Arizona, USA</span>
+                  </motion.div>
                 </div>
               </div>
             </div>
@@ -125,8 +161,21 @@ export default function Contact() {
           >
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg"
+              className="glass-card p-8 rounded-2xl relative overflow-hidden"
             >
+              {/* Animated gradient blob */}
+              <motion.div
+                className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-br from-purple-500/30 to-blue-500/30 rounded-full blur-2xl"
+                animate={{
+                  scale: [1, 1.3, 1],
+                }}
+                transition={{
+                  duration: 9,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <div className="relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label
@@ -135,14 +184,15 @@ export default function Contact() {
                   >
                     Name
                   </label>
-                  <input
+                  <motion.input
                     {...register("name")}
                     type="text"
-                    className={`w-full px-4 py-2 rounded-md border ${
+                    className={`w-full px-4 py-3 rounded-xl glass border-2 ${
                       errors.name
                         ? "border-red-500"
-                        : "border-gray-300 dark:border-gray-600"
-                    } focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white`}
+                        : "border-white/20 dark:border-gray-600/30"
+                    } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:text-white transition-all duration-300`}
+                    whileFocus={{ scale: 1.02 }}
                   />
                   {errors.name && (
                     <p className="mt-1 text-sm text-red-500">
@@ -157,14 +207,15 @@ export default function Contact() {
                   >
                     Email
                   </label>
-                  <input
+                  <motion.input
                     {...register("email")}
                     type="email"
-                    className={`w-full px-4 py-2 rounded-md border ${
+                    className={`w-full px-4 py-3 rounded-xl glass border-2 ${
                       errors.email
                         ? "border-red-500"
-                        : "border-gray-300 dark:border-gray-600"
-                    } focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white`}
+                        : "border-white/20 dark:border-gray-600/30"
+                    } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:text-white transition-all duration-300`}
+                    whileFocus={{ scale: 1.02 }}
                   />
                   {errors.email && (
                     <p className="mt-1 text-sm text-red-500">
@@ -180,14 +231,15 @@ export default function Contact() {
                 >
                   Subject
                 </label>
-                <input
+                <motion.input
                   {...register("subject")}
                   type="text"
-                  className={`w-full px-4 py-2 rounded-md border ${
+                  className={`w-full px-4 py-3 rounded-xl glass border-2 ${
                     errors.subject
                       ? "border-red-500"
-                      : "border-gray-300 dark:border-gray-600"
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white`}
+                      : "border-white/20 dark:border-gray-600/30"
+                  } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:text-white transition-all duration-300`}
+                  whileFocus={{ scale: 1.02 }}
                 />
                 {errors.subject && (
                   <p className="mt-1 text-sm text-red-500">
@@ -202,15 +254,16 @@ export default function Contact() {
                 >
                   Message
                 </label>
-                <textarea
+                <motion.textarea
                   {...register("message")}
                   rows={4}
-                  className={`w-full px-4 py-2 rounded-md border ${
+                  className={`w-full px-4 py-3 rounded-xl glass border-2 ${
                     errors.message
                       ? "border-red-500"
-                      : "border-gray-300 dark:border-gray-600"
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white`}
-                ></textarea>
+                      : "border-white/20 dark:border-gray-600/30"
+                  } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:text-white transition-all duration-300 resize-none`}
+                  whileFocus={{ scale: 1.02 }}
+                ></motion.textarea>
                 {errors.message && (
                   <p className="mt-1 text-sm text-red-500">
                     {errors.message.message}
@@ -218,26 +271,44 @@ export default function Contact() {
                 )}
               </div>
               <div className="mt-6">
-                <button
+                <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center ${
+                  className={`w-full relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold overflow-hidden group ${
                     isSubmitting ? "opacity-75 cursor-not-allowed" : ""
                   }`}
+                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 >
-                  {isSubmitting ? (
-                    <Loader2 className="w-5 h-5 animate-spin mr-2" />
-                  ) : (
-                    <Send className="w-5 h-5 mr-2" />
-                  )}
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </button>
+                  <span className="relative z-10 flex items-center justify-center">
+                    {isSubmitting ? (
+                      <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                    ) : (
+                      <Send className="w-5 h-5 mr-2" />
+                    )}
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.button>
               </div>
               {submitSuccess && (
-                <div className="mt-4 p-4 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-md">
-                  Message sent successfully!
-                </div>
+                <motion.div
+                  className="mt-4 p-4 glass-card rounded-xl border-2 border-green-500/50"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <p className="text-green-600 dark:text-green-400 font-semibold text-center">
+                    Message sent successfully!
+                  </p>
+                </motion.div>
               )}
+              </div>
             </form>
           </motion.div>
         </div>

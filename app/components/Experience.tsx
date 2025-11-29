@@ -67,50 +67,100 @@ export default function Experience() {
       id="experience"
       className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-900 transition-colors duration-300 overflow-hidden relative"
     >
-      <div className="container mx-auto px-6 relative z-10">
+      {/* Animated grid background */}
+      <div className="absolute inset-0 grid-pattern opacity-50"></div>
+
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <AnimatedSectionHeader title="Professional Experience" />
-        <div className="space-y-16">
+        <div className="space-y-12">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl relative overflow-hidden group"
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="glass-card p-8 rounded-2xl relative overflow-hidden group"
+              whileHover={{ scale: 1.02, y: -5 }}
             >
-              <div
-                className="absolute top-0 right-0 w-32 h-32 bg-blue-200 dark:bg-blue-700 rounded-bl-full z-0 opacity-50 
-                transition-transform duration-300 group-hover:scale-110"
-              ></div>
+              {/* Animated gradient blob */}
+              <motion.div
+                className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-bl-full blur-2xl"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 90, 0],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+
+              {/* Glowing border on hover */}
+              <motion.div
+                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  background: "linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3))",
+                  filter: "blur(20px)",
+                }}
+              />
+
               <div className="relative z-10">
-                <h3 className="text-2xl font-semibold mb-2 dark:text-white flex items-center">
+                <motion.h3
+                  className="text-2xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent flex items-center"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                >
                   {exp.company === "Freelance" ? (
                     <Globe className="w-6 h-6 mr-2 text-blue-500" />
                   ) : null}
                   {exp.company}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  {exp.location}
-                </p>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 flex items-center">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  {exp.period}
-                </p>
-                <p className="text-xl font-medium mb-4 dark:text-gray-200 flex items-center">
-                  <Briefcase className="w-5 h-5 mr-2" />
+                </motion.h3>
+
+                <div className="flex flex-wrap gap-4 mb-4">
+                  <motion.div
+                    className="glass px-3 py-1 rounded-full text-sm flex items-center gap-2"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <MapPin className="w-4 h-4 text-blue-500" />
+                    <span>{exp.location}</span>
+                  </motion.div>
+                  <motion.div
+                    className="glass px-3 py-1 rounded-full text-sm flex items-center gap-2"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <Calendar className="w-4 h-4 text-purple-500" />
+                    <span>{exp.period}</span>
+                  </motion.div>
+                </div>
+
+                <motion.p
+                  className="text-lg font-semibold mb-6 flex items-center gap-2 text-gray-700 dark:text-gray-200"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <Briefcase className="w-5 h-5 text-blue-500" />
                   {exp.role}
-                </p>
-                <ul className="list-none space-y-2">
+                </motion.p>
+
+                <ul className="list-none space-y-3">
                   {exp.responsibilities.map((resp, idx) => (
-                    <li
+                    <motion.li
                       key={idx}
-                      className="text-gray-700 dark:text-gray-300 flex items-start"
+                      className="text-gray-700 dark:text-gray-300 flex items-start gap-3 leading-relaxed"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 * idx }}
                     >
-                      <span className="text-blue-500 mr-2">•</span>
+                      <span className="mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex-shrink-0" />
                       {resp}
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </div>

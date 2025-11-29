@@ -10,12 +10,16 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import FloatingNav from "./components/floating-nav";
 import KeyProjects from "./components/KeyProjects";
+import CustomCursor from "./components/CustomCursor";
+import CursorTrail from "./components/CursorTrail";
 
 export default function Home() {
   const aboutRef = useRef<{ show: () => void }>(null);
 
   return (
     <main className="bg-gray-50 dark:bg-gray-900 min-h-screen">
+      <CustomCursor />
+      <CursorTrail />
       <FloatingNav />
       <Hero aboutRef={aboutRef} />
       <About ref={aboutRef} />

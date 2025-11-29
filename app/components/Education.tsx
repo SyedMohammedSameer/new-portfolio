@@ -44,42 +44,105 @@ export default function Education() {
       id="education"
       className="py-20 bg-gradient-to-br from-indigo-50 to-purple-100 dark:from-gray-900 dark:to-purple-900 transition-colors duration-300 overflow-hidden relative"
     >
-      <div className="container mx-auto px-6 relative z-10">
+      {/* Animated grid background */}
+      <div className="absolute inset-0 grid-pattern opacity-30"></div>
+
+      {/* Floating gradient orbs */}
+      <motion.div
+        className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
+        animate={{
+          x: [0, -70, 0],
+          y: [0, 50, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{
+          duration: 16,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <AnimatedSectionHeader title="Education" />
-        <div className="mx-auto lg:flex lg:gap-4">
+        <div className="mx-auto lg:flex lg:gap-8">
           {education.map((edu, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className={`bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl relative overflow-hidden ${
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className={`glass-card p-8 rounded-2xl relative overflow-hidden group ${
                 index === 1 && "mt-10 lg:mt-0"
               }`}
+              whileHover={{ scale: 1.02, y: -5 }}
             >
-              <div className="absolute top-0 left-0 w-32 h-32 bg-purple-200 dark:bg-purple-700 rounded-br-full z-0 opacity-50"></div>
+              {/* Animated gradient blob */}
+              <motion.div
+                className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-purple-500/30 to-blue-500/30 rounded-br-full blur-2xl"
+                animate={{
+                  scale: [1, 1.3, 1],
+                  rotate: [0, 90, 0],
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+
+              {/* Glowing border on hover */}
+              <motion.div
+                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  background: "linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(59, 130, 246, 0.3))",
+                  filter: "blur(20px)",
+                }}
+              />
+
               <div className="relative z-10">
-                <h3 className="text-2xl font-semibold mb-2 dark:text-white flex items-center">
-                  <GraduationCap className="w-6 h-6 mr-2" />
+                <motion.h3
+                  className="text-2xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent flex items-center"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <motion.div
+                    whileHover={{ rotate: 360, scale: 1.2 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <GraduationCap className="w-7 h-7 mr-3 text-purple-600 dark:text-purple-400" />
+                  </motion.div>
                   {edu.degree}
-                </h3>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">
+                </motion.h3>
+                <p className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
                   {edu.institution}
                 </p>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 flex items-center">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  {edu.period}
-                </p>
-                <h4 className="text-lg font-medium mb-2 dark:text-gray-200 flex items-center">
-                  <Award className="w-5 h-5 mr-2" />
+                <motion.div
+                  className="glass px-4 py-2 rounded-xl inline-flex items-center gap-2 mb-6"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Calendar className="w-4 h-4 text-blue-500" />
+                  <span className="text-gray-700 dark:text-gray-300">{edu.period}</span>
+                </motion.div>
+                <h4 className="text-lg font-bold mb-4 flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                  <Award className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                   Key Achievements:
                 </h4>
-                <ul className="list-disc list-inside space-y-2">
+                <ul className="space-y-3">
                   {edu.achievements.map((achievement, idx) => (
-                    <li key={idx} className="text-gray-700 dark:text-gray-300">
+                    <motion.li
+                      key={idx}
+                      className="text-gray-700 dark:text-gray-300 flex items-start gap-3 leading-relaxed"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.05 * idx }}
+                    >
+                      <span className="mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex-shrink-0" />
                       {achievement}
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </div>

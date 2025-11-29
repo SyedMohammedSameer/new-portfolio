@@ -104,44 +104,88 @@ export default function KeyProjects() {
       id="projects"
       className="py-32 bg-gradient-to-br from-indigo-50 to-purple-100 dark:from-gray-900 dark:to-purple-900 transition-colors duration-300 overflow-hidden relative"
     >
-      <div className="container mx-auto px-6 relative z-10">
+      {/* Animated grid background */}
+      <div className="absolute inset-0 grid-pattern opacity-40"></div>
+
+      {/* Floating gradient orbs */}
+      <motion.div
+        className="absolute top-20 left-10 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"
+        animate={{
+          x: [0, 50, 0],
+          y: [0, -30, 0],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <AnimatedSectionHeader title="Key Projects" />
-        <div className="portfolio-content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+        <div className="portfolio-content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.a
               key={index}
-              className="relative overflow-hidden rounded-lg cursor-pointer"
-              whileHover={{ scale: 1.1 }} // Scale effect on hover
-              transition={{ duration: 0.3 }} // Smooth transition
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-2xl cursor-pointer card-3d block"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              whileHover={{ scale: 1.05, rotateY: 5, rotateX: 5 }}
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                layout="responsive"
-                width={350}
-                height={200}
-                className="rounded-lg"
-              />
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-t from-black to-transparent flex flex-col items-center gap-3 justify-center text-center"
-                initial={{ opacity: 0, y: 20 }} // Start hidden and off the bottom
-                whileHover={{ opacity: 1, y: 0 }} // Show on hover
-                transition={{ duration: 0.4 }} // Transition duration for overlay
-              >
-                <motion.h5 className="text-white text-lg font-semibold mb-2 block">
-                  {project.title}
-                </motion.h5>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={project.link}
-                  className="mt-2 block"
+              {/* Glass card wrapper */}
+              <div className="relative overflow-hidden rounded-2xl glass-card pointer-events-none">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  layout="responsive"
+                  width={350}
+                  height={200}
+                  className="rounded-2xl transition-transform duration-500 group-hover:scale-110"
+                />
+
+                {/* Gradient overlay with blur effect */}
+                <motion.div
+                  className="absolute inset-0 glass-dark flex flex-col items-center gap-4 justify-center text-center"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  <ExternalLink className="text-black p-2 bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center" />
-                  {/* Smaller black icon */}
-                </a>
-              </motion.div>
-            </motion.div>
+                  <motion.h5
+                    className="text-white text-xl font-bold px-4 py-2 glass-strong rounded-lg"
+                    initial={{ y: 20 }}
+                    whileHover={{ y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
+                  >
+                    {project.title}
+                  </motion.h5>
+
+                  <motion.div
+                    className="glass-strong p-3 rounded-full hover:glow-blue transition-all duration-300"
+                    initial={{ y: 20, opacity: 0 }}
+                    whileHover={{ y: 0, opacity: 1, scale: 1.1 }}
+                    transition={{ duration: 0.3, delay: 0.2 }}
+                  >
+                    <ExternalLink className="text-white w-6 h-6" />
+                  </motion.div>
+                </motion.div>
+
+                {/* Border glow on hover */}
+                <motion.div
+                  className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-500/50 transition-all duration-300"
+                  style={{
+                    boxShadow: "0 0 0 0 rgba(59, 130, 246, 0)",
+                  }}
+                  whileHover={{
+                    boxShadow: "0 0 30px 5px rgba(59, 130, 246, 0.4)",
+                  }}
+                />
+              </div>
+            </motion.a>
           ))}
         </div>
       </div>

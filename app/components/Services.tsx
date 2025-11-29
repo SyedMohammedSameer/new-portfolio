@@ -37,9 +37,27 @@ export default function Services() {
       id="services"
       className="py-20 bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-gray-900 dark:to-blue-900 transition-colors duration-300 overflow-hidden relative"
     >
-      <div className="container mx-auto px-6 relative z-10">
+      {/* Animated grid background */}
+      <div className="absolute inset-0 grid-pattern opacity-30"></div>
+
+      {/* Floating gradient orbs */}
+      <motion.div
+        className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl"
+        animate={{
+          x: [0, 60, 0],
+          y: [0, -40, 0],
+          scale: [1, 1.15, 1],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.h2
-          className="text-4xl font-bold mb-12 text-center dark:text-white"
+          className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,32 +69,63 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="glass-card p-8 rounded-2xl relative overflow-hidden group"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.03, y: -5 }}
             >
-              <div className="flex items-center mb-4">
-                {service.icon}
-                <h3 className="text-2xl font-semibold ml-4 dark:text-white">
-                  {service.title}
-                </h3>
+              {/* Animated gradient blob */}
+              <motion.div
+                className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-2xl"
+                animate={{
+                  scale: [1, 1.3, 1],
+                  rotate: [0, 180, 0],
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+
+              <div className="relative z-10">
+                <motion.div
+                  className="flex items-center mb-6"
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div
+                    className="glass-strong p-3 rounded-xl"
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    {service.icon}
+                  </motion.div>
+                  <h3 className="text-2xl font-bold ml-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                    {service.title}
+                  </h3>
+                </motion.div>
+                <motion.p
+                  className="text-gray-700 dark:text-gray-300 leading-relaxed"
+                  initial={{ opacity: 0.8 }}
+                  whileHover={{ opacity: 1 }}
+                >
+                  {service.description}
+                </motion.p>
               </div>
-              <p className="text-gray-600 dark:text-gray-300">
-                {service.description}
-              </p>
+
+              {/* Glowing border on hover */}
+              <motion.div
+                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={{
+                  boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)",
+                }}
+              />
             </motion.div>
           ))}
         </div>
-      </div>
-      <div className="absolute top-0 left-0 w-64 h-64 -mt-32 -ml-32 opacity-20">
-        <Image
-          src="/placeholder.svg?height=256&width=256"
-          alt="Decorative background"
-          width={256}
-          height={256}
-        />
       </div>
     </section>
   );
