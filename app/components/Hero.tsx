@@ -78,11 +78,15 @@ export default function Hero({ aboutRef }: HeroProps) {
               AI Engineer
             </h2>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0">
-              A passionate Machine Learning enthusiast and Software Engineer,
-              currently pursuing a Master's at the University of Arizona. I
-              research Generative AI for semiconductors and digital phenotyping
-              for female health, with expertise in fine-tuning and pretraining LLMs, multi-agent
-              systems, and scalable deep learning pipelines.
+              AI Engineer and Researcher focused on applied machine learning and
+              deep learning. I build healthcare AI systems, multi-agent
+              architectures, multimodal LLMs, and RAG-driven pipelines, with
+              expertise in LLM inference, knowledge-grounded reasoning, and
+              explainable AI. I bring experience across academic labs and
+              early-stage startups, with contributions that include preprints,
+              startup co-founding, and a recently published patent in model
+              rocketry. Currently pursuing my Master’s at the University of
+              Arizona.
             </p>
             <div className="flex justify-center lg:justify-start space-x-4 mb-8">
               <a

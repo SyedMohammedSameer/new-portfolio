@@ -35,9 +35,9 @@ export default function Experience() {
       period: "March 2025",
       role: "Graduate Research Assistant",
       responsibilities: [
-        "Collaborating with one of the globe’s leading semiconductor companies to harness state-of-the-art Generative AI techniques—including Retrieval-Augmented Generation (RAG), Pydantic-based Multi-Agent systems, open-source LLMs, fine-tuning and pretraining models, as well as AI-driven simulations and 3D model rendering—for cutting-edge industrial applications.",
-        "Conducting research on digital phenotyping for female health by leveraging Big Data analytics and applying Machine Learning and Deep Learning models to uncover patterns, improve diagnostics, and enable personalized interventions.",
-      ],
+        "Developed digital phenotyping pipelines by integrating MindLamp and deploying RADAR-Base on AWS EC2 for continuous ingestion of mobile sensor data, supporting MyDataHelps deployment for a postpartum health study.",
+        "Engineered a multi-agent architecture that unifies wearable data, phone sensor data by building knowledge graphs, KNN clusters, and text embeddings."
+      ],      
     },
     {
       company: "Lumenci",
