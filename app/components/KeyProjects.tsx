@@ -10,7 +10,7 @@ import Solarwather from "@/public/solarweather.png";
 import JarvisAI from "@/public/JarvisAI.png";
 import ImageDetectorAI from "@/public/ImageDetectorAI.png"
 import AutoPharma from "@/public/AutopharmaAI.png"
-import mediai from "@/public/MediAI.png"
+import vitashifa from "@/public/MediAI.png"
 import protein from "@/public/PPIGNN.png"
 import afny from "@/public/AfnyAI.png"
 import ionthefold from "@/public/ionthefold.png"
@@ -53,9 +53,9 @@ export default function KeyProjects() {
       link: "https://salsabil-syedmohammedsameers-projects.vercel.app/",
     },
     {
-      title: "MediAI",
-      image: mediai,
-      link: "https://medi-ai-eta.vercel.app/",
+      title: "VitaShifa",
+      image: vitashifa,
+      link: "https://vitashifa2.netlify.app/",
     },
     {
       title: "Protein Protein Interaction GNN",
@@ -65,7 +65,7 @@ export default function KeyProjects() {
     {
       title: "Afny AI",
       image: afny,
-      link: "https://afny-ai-v2.vercel.app/",
+      link: "https://afnyai.netlify.app/",
     },
     {
       title: "AutoPharma",
